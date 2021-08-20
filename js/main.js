@@ -4,9 +4,16 @@ $(document).ready(function () {
     let counterDown = $(".counter-down");
     let floorPath = $(".home-image path");
     floorPath.on("mouseover", function () {
-        floorPath.removeClass("current-floor");
+        // убрала удаление класса активного этажа при наведение
+        // floorPath.removeClass("current-floor");
         currentFloor = $(this).attr("data-floor");
         $(".counter").text(currentFloor);
+    });
+    // добавила слушатель на событие клика по этажу и тогда удаляет предыдущий этаж и выделяет активный
+    floorPath.on("click", function () {
+        floorPath.removeClass("current-floor");
+        $(this).addClass("current-floor");
+        currentFloor = $(this).attr("data-floor");
     });
 
     counterUp.on("click", function () {
