@@ -212,3 +212,9 @@ path.current-floor {
     border: none;
     background-color: #fff;
 }
+a.current-link {
+    color: #3596f5;
+}
+path.current-flat {
+    opacity: 1;
+}
